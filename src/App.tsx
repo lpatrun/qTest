@@ -1,10 +1,14 @@
-import HomePage from './modules/home';
+import { BrowserRouter } from 'react-router-dom';
+
+import Router from './modules/router';
 import ErrorBoundary from './wrapper/ErrorBoundary';
 
 function App() {
     return (
         <ErrorBoundary>
-            <HomePage />
+            <BrowserRouter>
+                <Router />
+            </BrowserRouter>
         </ErrorBoundary>
     );
 }
