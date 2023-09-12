@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 
-import Router from './modules/router';
+import Router from './router';
 import ErrorBoundary from './wrapper/ErrorBoundary';
 
 function App() {

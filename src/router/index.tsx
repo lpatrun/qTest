@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import PostPage from '../post';
-import PostsPage from '../posts';
+import PostPage from '../modules/post';
+import PostsPage from '../modules/posts';
 import { RoutePaths } from './const/routes';
 
 const Router = () => {
