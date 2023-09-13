@@ -10,7 +10,7 @@ const Router = () => {
             <Route path={RoutePaths.Posts} element={<PostsPage />} />
             <Route path={RoutePaths.Post} element={<PostPage />} />
 
-            <Route path="*" element={<Navigate to={RoutePaths.Posts} replace />} />
+            <Route path='*' element={<Navigate to={RoutePaths.Posts} replace />} />
         </Routes>
     );
 };
