@@ -1,8 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 
-import { MESSAGE } from '../../const/message';
 import { PostsContext, type Post } from '../../providers/PostsProvider';
-import PostComponent from './components/PostComponent';
+import PostWrapperComponent from './components/PostWrapperComponent';
 
 export default function PostsPage() {
     const { users, posts, comments } = useContext(PostsContext);
@@ -20,7 +19,7 @@ export default function PostsPage() {
         }
     };
 
-    //console.log('Hello, PostsPage');
+    // console.log('Hello, PostsPage');
 
     useEffect(() => {
         setFilteredPosts(posts);
@@ -38,18 +37,27 @@ export default function PostsPage() {
             >
                 <h1>Posts page</h1>
 
-                <input type='text' onChange={e => onChangeText(e.target.value)} />
+                <input
+                    type='text'
+                    style={{ paddingInline: 10 }}
+                    onChange={e => onChangeText(e.target.value)}
+                    placeholder='Filter by user name'
+                />
             </div>
 
-            {filteredPosts.map(post => (
-                <PostComponent
-                    key={post.id}
-                    post={post}
-                    userName={users.find(user => user.id === post.userId)?.name}
-                    comments={comments.filter(comment => comment.postId === post.id)}
-                    consoleStatement={`${MESSAGE}PostComponent ${post.id}`}
-                />
-            ))}
+            {filteredPosts.map(post => {
+                const userName = users.find(user => user.id === post.userId)?.name;
+                const postComments = comments.filter(comment => comment.postId === post.id);
+
+                return (
+                    <PostWrapperComponent
+                        key={post.id}
+                        userName={userName}
+                        post={post}
+                        comments={postComments}
+                    />
+                );
+            })}
         </div>
     );
 }

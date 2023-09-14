@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
+import { type ReactNode, createContext, useEffect, useState } from 'react';
 import { axiosInstance } from '../service';
 
 export interface Post {
@@ -40,6 +40,12 @@ export interface Comment {
     body: string;
 }
 
+export interface SinglePost {
+    post: Post;
+    userName?: string;
+    comments?: Comment[];
+}
+
 interface PostsContextProps {
     users: User[];
     posts: Post[];
@@ -52,7 +58,7 @@ export const PostsContext = createContext<PostsContextProps>({
     comments: [],
 });
 
-export default function PostsProvider({ children }: { children: React.ReactNode }) {
+export default function PostsProvider({ children }: { children: ReactNode }) {
     const [users, setUsers] = useState<User[]>([]);
     const [posts, setPosts] = useState<Post[]>([]);
     const [comments, setComments] = useState<Comment[]>([]);
