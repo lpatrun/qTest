@@ -20,7 +20,7 @@ export default function PostsPage() {
         }
     };
 
-    // console.log('Hello, PostsPage');
+    console.log('Hello, PostsPage');
 
     useEffect(() => {
         setFilteredPosts(posts);

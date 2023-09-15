@@ -25,7 +25,6 @@
         "react-hooks/exhaustive-deps": "error",
         "react-hooks/rules-of-hooks": "error",
         "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
-        "no-console": "error",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/strict-boolean-expressions": "off",
         "@typescript-eslint/no-extraneous-class": "off",

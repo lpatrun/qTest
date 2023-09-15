@@ -26,7 +26,7 @@ export default function PostComponent({
     comments,
     consoleStatement,
 }: Props) {
-    //console.log(consoleStatement);
+    console.log(consoleStatement);
 
     return (
         <PostComponentContext.Provider value={{ singlePost }}>
