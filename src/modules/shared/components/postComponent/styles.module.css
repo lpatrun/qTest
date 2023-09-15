@@ -1,0 +1,56 @@
+.postWrapper {
+    border: 2px solid gray;
+    padding: 20px;
+}
+
+.postTitle {
+    margin-bottom: 10px;
+}
+
+.postBody {
+    margin-bottom: 15px;
+}
+
+.postComment {
+    margin-bottom: 10px;
+}
+
+.postCommentTitle {
+    margin-bottom: 5px;
+}
+
+.postCommentEmail {
+    text-align: end;
+}
+
+.postCheckbox {
+    position: absolute;
+    left: -100vw;
+}
+
+.postLabel {
+    padding: 5px 10px;
+    border: 2px solid #666;
+    border-radius: 5px;
+    margin-left: auto;
+    display: block;
+    max-width: fit-content;
+}
+
+.postLabel::after {
+    content: 'Show more';
+}
+
+.postCheckbox:checked + .postLabel::after {
+    content: 'Show less';
+}
+
+.postCommentsWrapper {
+    height: 170px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.postCommentsWrapper:has(+ .postCheckbox:checked) {
+    height: unset;
+}

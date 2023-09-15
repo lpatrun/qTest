@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 
 import { PostsContext, type Post } from '../../providers/PostsProvider';
 import PostWrapperComponent from './components/PostWrapperComponent';
+import styles from './styles.module.css';
 
 export default function PostsPage() {
     const { users, posts, comments } = useContext(PostsContext);
@@ -26,20 +27,13 @@ export default function PostsPage() {
     }, [posts]);
 
     return (
-        <div style={{ margin: 50 }}>
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    marginBottom: 20,
-                    justifyContent: 'space-between',
-                }}
-            >
+        <div className={styles.container}>
+            <div className={styles.postsHeader}>
                 <h1>Posts page</h1>
 
                 <input
                     type='text'
-                    style={{ paddingInline: 10 }}
+                    className={styles.search}
                     onChange={e => onChangeText(e.target.value)}
                     placeholder='Filter by user name'
                 />

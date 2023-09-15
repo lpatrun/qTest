@@ -1,10 +1,13 @@
 import { type ReactNode } from 'react';
+
 import { type SinglePost } from '../../../../providers/PostsProvider';
 import PostComponentContext from './PostComponentContext';
 import PostUserName from './PostUserName';
 import PostTitle from './PostTitle';
 import PostDescription from './PostDescription';
 import PostComments from './PostComments';
+
+import styles from './styles.module.css';
 
 interface Props {
     singlePost: SinglePost;
@@ -27,7 +30,7 @@ export default function PostComponent({
 
     return (
         <PostComponentContext.Provider value={{ singlePost }}>
-            <div style={{ border: '2px solid gray', padding: 20 }}>
+            <div className={styles.postWrapper}>
                 {userName}
                 {title}
                 {description}

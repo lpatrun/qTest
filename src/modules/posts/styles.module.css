@@ -1,0 +1,17 @@
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.postsHeader {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.search {
+    padding: 0 10px;
+}
